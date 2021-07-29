@@ -25,11 +25,11 @@ array3 = np.ones((4,4), dtype=str)
 print(array3)
 
 # 0부터 9까지 랜덤값이 초기화된 데이터 만들기
-array4 = np.random.randint(0,10,(3,3)) # 3*3 배열
+array4 = np.random.randint(0, 10, (3, 3)) # 3*3 배열
 print(array4)
 
 # 평균이 0이고, 표준편차가 1인 표준 정규를 띄는 배열 (표준정규분포)
-array5 = np.random.normal(0, 1,(3, 3)) # 3*3 배열
+array5 = np.random.normal(0, 1, (3, 3)) # 3*3 배열
 print(array5)
 
 # Numpy 배열 합치기 (concatenate)
