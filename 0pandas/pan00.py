@@ -1,5 +1,5 @@
 import pandas as pd
-
+from pandas import *
 data_frame = pd.read_csv('../data/friend_list.csv')
 
 # 탭으로 구분된 txt파일 불러오기
@@ -9,7 +9,6 @@ data_frame = pd.read_csv('../data/friend_list.csv')
 # data_frame = pd.read_csv('../data/friend_list_no_head.csv', header = None, names=['name', 'age', 'job'])
 # data_frame.columns = ['name', 'age', 'job']
 # print(data_frame)
-
 # print(data_frame)
 # print(data_frame.head())
 # print(data_frame.tail())
@@ -81,15 +80,17 @@ df = pd.DataFrame(friends)
 # df = df[1:3]
 
 # 특정한 row만 선택하여 필터
-# 인덱스로 접근하기위한 loc 메서드
+# 라벨링으로 접근하기위한 loc 메서드
 # 0행, 2행만 불러오기
-# df = df.loc([0, 2])
+# df = df.loc[:, 'job']
 
 # by column condition
-# df데이터프레임의 age열의 값이 25보다 큰 행만 선택하여 필터
+# df 데이터프레임의 age열의 값이 25보다 큰 행만 선택하여 필터
 # df = df[df.age > 25]
+# df = df['age'] > 25
 # df = df.query('age > 25')
-# df = df[ (df.age > 25 & (df.name == 'Nate') ]
+
+# df = df[ (df.age > 25) & (df.name == 'Nate') ]
 
 # Column을 이용한 필터
 # 인덱스로 필터링
@@ -110,6 +111,7 @@ df = pd.read_csv('../data/friend_list_no_head.csv', header=None, names=['name', 
 # name, age 칼럼만 가져오기
 df_filtered = df[['name', 'age']]
 # print(df_filtered)
+# df = df[['age', 'job']]
 # df = df.filter(items=['age', 'job'])
 # print(df)
 
@@ -119,4 +121,4 @@ df_filtered = df[['name', 'age']]
 
 # 정규식 사용
 # 칼럼명이 b로 끝나는 칼럼만 가져옴
-print(df.filter(regex='b$', axis=1))
+# print(df.filter(regex='b$', axis=1))

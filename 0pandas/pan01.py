@@ -1,7 +1,6 @@
 import pandas as pd
 
 data_frame = pd.read_csv('../data/friend_list.csv')
-
 # 데이터프레임 행, 열 삭제하기
 friends = [{'age': 15, 'job': 'student'},
            {'age': 25, 'job': 'developer'},
