@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 
 print('##############################################################################################')
@@ -19,7 +20,7 @@ student_list = [{'name': 'John', 'major': "Computer Science", 'sex': "male"},
 df = pd.DataFrame(student_list, columns = ['name', 'major', 'sex'])
 
 # 중복데이터 index 조회
-df.duplicated()
+# print(df.duplicated())
 # 데이터프레임에서 중복데이터 제거하기
 # print(df.drop_duplicates())
 
@@ -48,17 +49,18 @@ df = pd.DataFrame(student_list, columns = ['name', 'major', 'sex'])
 print('##############################################################################################')
 # NaN (None)찾아서 다른 값으로 변경하기
 school_id_list = [{'name': 'John', 'job': "teacher", 'age': 40},
-                {'name': 'Nate', 'job': "teacher", 'age': 35},
-                {'name': 'Yuna', 'job': "teacher", 'age': 37},
-                {'name': 'Abraham', 'job': "student", 'age': 10},
-                {'name': 'Brian', 'job': "student", 'age': 12},
-                {'name': 'Janny', 'job': "student", 'age': 11},
-                {'name': 'Nate', 'job': "teacher", 'age': None},
-                {'name': 'John', 'job': "student", 'age': None}
-         ]
+                  {'name': 'Nate', 'job': "teacher", 'age': 35},
+                  {'name': 'Yuna', 'job': "teacher", 'age': 37},
+                  {'name': 'Abraham', 'job': "student", 'age': 10},
+                  {'name': 'Brian', 'job': "student", 'age': 12},
+                  {'name': 'Janny', 'job': "student", 'age': 11},
+                  {'name': 'Nate', 'job': "teacher", 'age': None},
+                  {'name': 'John', 'job': "student", 'age': None}]
+
 df = pd.DataFrame(school_id_list, columns = ['name', 'job', 'age'])
 # None값 조회하기
 # print(df.info())
+
 # None값 테이블로 조회하기
 # print(df.isna())
 
@@ -67,7 +69,7 @@ df = pd.DataFrame(school_id_list, columns = ['name', 'job', 'age'])
 
 # None값을 median 값으로 변경하기
 # job으로 그룹짓고 age가 None값을 job별 중간값으로 변경
-df.age = df.age.fillna(df.groupby('job')['age'].transform('median'))
+# df.age = df.age.fillna(df.groupby('job')['age'].transform('median'))
 # print(df)
 
 print('##############################################################################################')
@@ -76,4 +78,4 @@ date_list = [{'yyyy-mm-dd': '2000-06-27'},
          {'yyyy-mm-dd': '2002-09-24'},
          {'yyyy-mm-dd': '2005-12-20'}]
 df = pd.DataFrame(date_list, columns = ['yyyy-mm-dd'])
-print(df)
+# print(df)
