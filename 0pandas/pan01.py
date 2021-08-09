@@ -136,10 +136,10 @@ group_by_major = df.groupby('major')
 # print(group_by_major.groups)
 
 # for문으로 알아보기 쉽게 시각화함
-# for name, group in group_by_major:
-#     print(name + ':' + str(len(group)))
-#     print(group)
-#     print()
+for name, group in group_by_major:
+    print(name + ':' + str(len(group)))
+    print(group)
+    print()
 
 # 학과별로 데이터프레임 만들기
 df_major_cnt = pd.DataFrame({'count': group_by_major.size()}).reset_index()
