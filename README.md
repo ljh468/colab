@@ -1,2 +1,6 @@
-# colab
-# 머신러닝, 딥러닝
+# Colab
+# DNN
+# RNN
+# LSTM
+# GRU
+# CNN
